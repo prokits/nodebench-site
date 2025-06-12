@@ -32,7 +32,8 @@ export default function EthicsStatementPage() {
                     Transparency isn&apos;t just a buzzword here - it&apos;s my fundamental promise.
                 </Paragraph>
 
-                <Paragraph className="mt-10">
+                <Paragraph className="mt-6">
+                    Best, <br />
                     Tushar Gaurav
                 </Paragraph>
             </Main>

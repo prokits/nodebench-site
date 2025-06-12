@@ -2,7 +2,7 @@ import fs from "fs";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Main, Subtitle, Title } from "@/components/ui/static-pages";
+import { Main, Title } from "@/components/ui/static-pages";
 import BlogCard from "./_components/BlogCard";
 
 export const metadata: Metadata = {
