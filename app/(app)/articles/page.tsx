@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Main, Subtitle, Title } from "@/components/ui/static-pages";
-import { format, formatDistanceToNow } from "date-fns";
+import BlogCard from "./_components/BlogCard";
 
 export const metadata: Metadata = {
   title: "Articles - nodebench",
@@ -75,46 +75,17 @@ function ArticleCard({
   );
 }
 
-function BlogCard({
-  title,
-  image,
-  description,
-  date,
-  url,
-}: {
-  title: string;
-  image: string;
-  description: string;
-  date: string;
-  url: string;
-}) {
-  return (
-    <Link href={url} className="bg-gray-200 group">
-      <Image src={image} height={200} width={1000} alt={title}  />
-      <hr className="border-brand_orange/60 border-b-4"/>
-      <div className="px-4 pt-2 pb-4">
-        <h3 className="font-semibold text-lg group-hover:text-brand_orange">{title}</h3>
-        <p className="text-sm mb-2">
-          {format(new Date(date), 'dd MMMM yyyy')} • {formatDistanceToNow(new Date(date)) + " ago"}
-        </p>
-        <p className="leading-5">{description}</p>
-        {/* <Link href={url} className="bg-brand_orange/20 py-2 px-4 inline-flex items-center justify-between gap-2 text-black text-sm">
-            Read <MoveUpRight className="w-4 h-4" />
-        </Link> */}
-      </div>
-    </Link>
-  );
-}
+
 
 export default function ArticlePage() {
   const blogs = articles.filter((article) => article.type === "blog");
-  const techArticles = articles.filter((article) => article.type === "article");
+  // const techArticles = articles.filter((article) => article.type === "article");
   
   return (
     <Main>
         <Title title="Tech Articles" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {techArticles.map((article) => (
                 <ArticleCard key={article.url} 
                     title={article.title}
@@ -122,10 +93,8 @@ export default function ArticlePage() {
                     url={article.url}
                  />
             ))}
-        </div>
-
-        <Subtitle subtitle="Stay On the Cutting Edge" className="mt-12"/>
-
+        </div> */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {blogs.map((article) => (
                 <BlogCard key={article.url} 
