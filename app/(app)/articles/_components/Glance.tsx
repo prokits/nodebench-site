@@ -59,6 +59,11 @@ export default function Glance({
     images,
 }: GlanceProps
 ) {
+    const entries = Object.entries(productData);
+    // With an odd count, fill the last row so the gap takes the checkerboard
+    // colour instead of showing the panel behind it.
+    const tiles = entries.length % 2 ? [...entries, null] : entries;
+
     return (
         <div className="grid md:grid-cols-2 gap-4 max-w-6xl mx-auto">
             <div className="relative aspect-video w-full">
@@ -79,15 +84,23 @@ export default function Glance({
                     </p>
                 </div>
                 <div className="grid grid-cols-2">
-                    {Object.entries(productData).map(([key, value], index) => (
-                        <div
-                            className={`text-xs md:text-sm py-2 px-4 text-center ${index % 2 === 0 ? 'bg-surface-subtle' : 'bg-brand_orange-light/40'}`}
-                            key={key}
-                        >
-                            <span className="block font-bold mb-1">{getTileHeading(key)}</span>
-                            <span>{value}</span>
-                        </div>
-                    ))}
+                    {tiles.map((tile, index) => {
+                        // Checkerboard across the 2-column grid, so no tile shares
+                        // a colour with its neighbour across or below it.
+                        const row = Math.floor(index / 2);
+                        const col = index % 2;
+                        const tone = (row + col) % 2 === 0 ? "bg-surface-subtle" : "bg-brand_orange-light/40";
+
+                        if (!tile) return <div key="filler" aria-hidden className={tone} />;
+
+                        const [key, value] = tile;
+                        return (
+                            <div className={`text-xs md:text-sm py-2 px-4 text-center ${tone}`} key={key}>
+                                <span className="block font-bold mb-1">{getTileHeading(key)}</span>
+                                <span>{value}</span>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
