@@ -24,7 +24,7 @@ export function MainContent({ children }: { children: React.ReactNode }) {
 export function Tldr({ children }: { children?: React.ReactNode }) {
   return (
     <div className="flex flex-col justify-between gap-6">
-      {children && <div className="h-min md:max-w-md md:ml-6 px-6 pb-6 bg-gray-200">{children}</div>}
+      {children && <div className="h-min md:max-w-md md:ml-6 px-6 pb-6 bg-surface">{children}</div>}
       <AsideContent />
     </div>
   );
@@ -38,7 +38,7 @@ export function AsideContent({ children }: { children?: React.ReactNode }) {
 
 
   return (
-    <div className="h-min mt-auto md:max-w-md p-6 pt-12 md:ml-6 mb-6 bg-gray-200 space-y-8">
+    <div className="h-min mt-auto md:max-w-md p-6 pt-12 md:ml-6 mb-6 bg-surface space-y-8">
       {children}
       <div>
         <h3 className="text-lg font-semibold">Read More</h3>

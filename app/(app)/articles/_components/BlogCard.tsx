@@ -18,15 +18,15 @@ export default function BlogCard({
   url: string;
 }) {
   return (
-    <Link href={url} className="bg-gray-300 group overflow-hidden rounded-lg ">
+    <Link href={url} className="bg-surface-strong group overflow-hidden rounded-lg">
       <Image src={image} height={200} width={1000} alt={title}  />
       <hr className="border-brand_orange/60 border-b-4"/>
       <div className="px-4 pt-2 pb-4">
-        <h3 className="font-semibold text-lg group-hover:text-orange-700 transition-colors">{title}</h3>
-        <p className="text-sm text-gray-600 mb-4">
+        <h3 className="font-semibold text-lg group-hover:text-orange-700 dark:group-hover:text-brand_orange transition-colors">{title}</h3>
+        <p className="text-sm text-gray-600 dark:text-muted-foreground mb-4">
           {format(new Date(date), 'dd MMMM yyyy')} • {formatDistanceToNow(new Date(date)) + " ago"}
         </p>
-        <p className="leading-5 text-gray-800 mb-2">{description}</p>
+        <p className="leading-5 text-gray-800 dark:text-foreground/85 mb-2">{description}</p>
         {/* <Link href={url} className="bg-brand_orange/20 py-2 px-4 inline-flex items-center justify-between gap-2 text-black text-sm">
             Read <MoveUpRight className="w-4 h-4" />
         </Link> */}

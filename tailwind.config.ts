@@ -11,8 +11,13 @@ export default {
 		extend: {
 			colors: {
 				brand_orange: {
-					DEFAULT: '#F35541',
-					light: "#E0A7A7"
+					DEFAULT: 'hsl(var(--brand-orange) / <alpha-value>)',
+					light: 'hsl(var(--brand-orange-light) / <alpha-value>)'
+				},
+				surface: {
+					subtle: 'hsl(var(--surface-subtle) / <alpha-value>)',
+					DEFAULT: 'hsl(var(--surface) / <alpha-value>)',
+					strong: 'hsl(var(--surface-strong) / <alpha-value>)'
 				},
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

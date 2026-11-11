@@ -20,6 +20,19 @@ export default function BackgroundImageSection({ image, className, children }:
                         object-center
                         absolute inset-0
                         -z-10
+                        dark:brightness-[0.3]
+                        dark:sepia-[0.25]
+                    "
+                />
+                {/* These photos have a light backdrop baked in. In dark mode they are
+                    dimmed, then faded into the page on the text side. */}
+                <div
+                    aria-hidden
+                    className="
+                        hidden md:dark:block
+                        absolute inset-0
+                        -z-10
+                        bg-gradient-to-r from-background from-10% via-background/75 to-transparent to-80%
                     "
                 />
             </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { CSPostHogProvider } from "./providers";
+import { themeInitScript } from "@/lib/theme";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // The theme script adds the `dark` class before React hydrates.
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <CSPostHogProvider>
         <body className={`${poppins.variable} antialiased`}>{children}</body>
       </CSPostHogProvider>

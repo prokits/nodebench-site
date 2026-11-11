@@ -14,7 +14,7 @@ function Accordions({ data, defaultOpenValue }: {
     return (
         <Accordion type="single" collapsible defaultValue={defaultOpenValue} className="space-y-4">
             {data.map((item, index) => (
-                <AccordionItem key={index} value={item.value || item.title} className="border border-zinc-300 rounded-lg px-4 ">
+                <AccordionItem key={index} value={item.value || item.title} className="border border-zinc-300 dark:border-border rounded-lg px-4">
                     <AccordionTrigger className="py-4 hover:no-underline">
                         <div className="flex gap-4 items-center">
                             {item.icon && (

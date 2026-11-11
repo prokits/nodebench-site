@@ -61,7 +61,7 @@ function ArticleCard({
   url: string;
 }) {
   return (
-    <Link href={url} className="bg-gray-200 group">
+    <Link href={url} className="bg-surface group">
       <Image src={image} height={200} width={400} alt={title} />
       <hr className="border-brand_orange/60 border-b-4"/>
       <div className="px-4 pt-3 pb-4">

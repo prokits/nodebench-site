@@ -29,7 +29,7 @@ export default function SearchBar() {
     return (
         <div className="flex flex-col items-center w-full">
             <div className="relative w-full max-w-2xl">
-                <div className="flex items-center bg-white rounded-full shadow-xl hover:shadow-2xl transition-shadow">
+                <div className="flex items-center bg-card rounded-full shadow-xl hover:shadow-2xl transition-shadow dark:ring-1 dark:ring-border">
                     <Search className="absolute left-6 w-5 h-5 text-gray-400" />
                     <Input 
                         type="text" 
@@ -44,12 +44,12 @@ export default function SearchBar() {
                 </div>
                 
                 {searchString.length > 0 && (
-                    <div className="absolute z-10 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
+                    <div className="absolute z-10 w-full mt-2 bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border">
                         {searchFromMetadata(searchString, reviews, articles).map((result) => (
                             <Link href={result.url} key={result.url}>
-                                <div className="p-4 hover:bg-gray-50 text-left transition-colors first:rounded-t-2xl last:rounded-b-2xl">
-                                    <h3 className="text-base font-medium text-gray-900">{result.title}</h3>
-                                    <p className="mt-1 text-sm text-gray-500">{result.description}</p>
+                                <div className="p-4 hover:bg-gray-50 dark:hover:bg-surface text-left transition-colors first:rounded-t-2xl last:rounded-b-2xl">
+                                    <h3 className="text-base font-medium text-gray-900 dark:text-foreground">{result.title}</h3>
+                                    <p className="mt-1 text-sm text-gray-500 dark:text-muted-foreground">{result.description}</p>
                                 </div>
                             </Link>
                         ))}

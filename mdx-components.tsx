@@ -24,7 +24,7 @@ const components = {
         <h4 className="font-semibold text-base mt-4 mb-2" {...props} />
     ),
     p: (props: ParagraphProps) => (
-        <p className="text-gray-700 leading-relaxed mb-4 max-w-[92ch]" style={{
+        <p className="text-gray-700 dark:text-foreground/85 leading-relaxed mb-4 max-w-[92ch]" style={{
             maxWidth: '720px',
         }} {...props}/>
     ),
@@ -35,7 +35,7 @@ const components = {
         <ul className="list-disc pl-8 mb-4 space-y-2" {...props} />
     ),
     li: (props: ListItemProps) => (
-        <li className="text-gray-700" {...props} />
+        <li className="text-gray-700 dark:text-foreground/85" {...props} />
     ),
     em: (props: ComponentPropsWithoutRef<'em'>) => (
         <em className="italic" {...props} />
@@ -44,7 +44,7 @@ const components = {
         <strong className="font-bold" {...props} />
     ),
     a: ({ href, children, ...props }: AnchorProps) => {
-        const className = 'text-brand_orange hover:text-brand_orange-light underline';
+        const className = 'text-brand_orange hover:text-brand_orange-light dark:hover:text-foreground underline';
         if (href?.startsWith('/')) {
             return (
                 <Link href={href} className={className} {...props}>
@@ -75,7 +75,7 @@ const components = {
         const codeHTML = highlight(children as string);
         return (
             <code
-                className="bg-gray-100 px-1.5 py-0.5 rounded text-sm"
+                className="bg-surface-subtle px-1.5 py-0.5 rounded text-sm"
                 dangerouslySetInnerHTML={{ __html: codeHTML }}
                 {...props}
             />
@@ -84,7 +84,7 @@ const components = {
     Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
         <table className="w-full border-collapse mb-4">
             <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-surface-subtle">
                     {data.headers.map((header, index) => (
                         <th key={index} className="border p-2 text-left">{header}</th>
                     ))}
@@ -103,14 +103,15 @@ const components = {
     ),
     blockquote: (props: BlockquoteProps) => (
         <blockquote
-            className="border-l-4 border-brand_orange pl-4 py-2 my-4 bg-gray-50 italic"
+            className="border-l-4 border-brand_orange pl-4 py-2 my-4 bg-gray-50 dark:bg-surface-subtle italic"
             {...props}
         />
     ),
 
     img: ({ src, alt, ...props }: ComponentPropsWithoutRef<'img'>) => {
+        // A span, not a div: markdown wraps standalone images in <p>.
         return (
-            <div className="my-8">
+            <span className="block my-8">
                 <Image
                     src={src as string}
                     alt={alt || ''}
@@ -118,7 +119,7 @@ const components = {
                     width={800}
                     height={400}
                 />
-            </div>
+            </span>
         );
     },
 };

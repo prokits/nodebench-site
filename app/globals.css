@@ -33,28 +33,54 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* Brand. #F35541 and #E0A7A7 */
+    --brand-orange: 6.7 88.1% 60.4%;
+    --brand-orange-light: 0 47.9% 76.7%;
+
+    /* Card surfaces, named by how far they sit from the page background.
+       Light values are exactly Tailwind gray-100 / gray-200 / gray-300. */
+    --surface-subtle: 220 14.3% 95.9%;
+    --surface: 220 13% 91%;
+    --surface-strong: 216 12.2% 83.9%;
+
+    color-scheme: light;
   }
 
+  /* Warm charcoal tinted toward the brand hue, so the orange reads as
+     part of the same material instead of a sticker on neutral black. */
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --background: 15 9% 9%;
+    --foreground: 20 14% 91%;
+    --card: 15 8% 12%;
+    --card-foreground: 20 14% 91%;
+    --popover: 15 8% 12%;
+    --popover-foreground: 20 14% 91%;
+    --primary: 20 14% 91%;
+    --primary-foreground: 15 9% 9%;
+    --secondary: 15 8% 17%;
+    --secondary-foreground: 20 14% 91%;
+    --muted: 15 8% 17%;
+    --muted-foreground: 20 6% 63%;
+    --accent: 15 8% 17%;
+    --accent-foreground: 20 14% 91%;
+    --destructive: 0 62.8% 40%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 15 8% 21%;
+    --input: 15 8% 21%;
+    --ring: 20 14% 83%;
+
+    /* Orange stays the same; the pale tint becomes a deep brick so the
+       existing /20–/50 washes glow warm rather than turning mauve. */
+    --brand-orange: 6.7 88.1% 60.4%;
+    --brand-orange-light: 8 36% 23%;
+
+    --surface-subtle: 15 8% 12%;
+    --surface: 15 8% 14%;
+    --surface-strong: 15 8% 17%;
+
+    color-scheme: dark;
+
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;

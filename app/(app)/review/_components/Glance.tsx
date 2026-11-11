@@ -81,7 +81,7 @@ export default function Glance({
                 <div className="grid grid-cols-2">
                     {Object.entries(productData).map(([key, value], index) => (
                         <div
-                            className={`text-xs md:text-sm py-2 px-4 text-center ${index % 2 === 0 ? 'bg-gray-100' : 'bg-brand_orange-light/40'}`}
+                            className={`text-xs md:text-sm py-2 px-4 text-center ${index % 2 === 0 ? 'bg-surface-subtle' : 'bg-brand_orange-light/40'}`}
                             key={key}
                         >
                             <span className="block font-bold mb-1">{getTileHeading(key)}</span>

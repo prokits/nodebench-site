@@ -14,12 +14,12 @@ export default function Topbar({
 }) {
   return (
     <div className="my-10">
-       <h1 className="font-bold mt-20 text-3xl tracking-tight text-gray-900 hover:text-brand_orange transition-colors duration-300">
+       <h1 className="font-bold mt-20 text-3xl tracking-tight text-gray-900 dark:text-foreground hover:text-brand_orange transition-colors duration-300">
           {title}
         </h1>
       <hr className="mt-2 rounded-full w-full bg-brand_orange-light h-2" />
       <div className="text-sm mt-1 flex items-baseline gap-1">
-        <h5 className="mt-1 text-gray-600 font-medium">
+        <h5 className="mt-1 text-gray-600 dark:text-muted-foreground font-medium">
           {format(new Date(date), "MMMM d, yyyy")}
         </h5>
       </div>
@@ -34,7 +34,7 @@ export default function Topbar({
       {thumbnailCaption && (
         <p
           className="
-                text-xs text-gray-500 mt-1
+                text-xs text-gray-500 dark:text-muted-foreground mt-1
                 flex items-center gap-1 
             "
         >

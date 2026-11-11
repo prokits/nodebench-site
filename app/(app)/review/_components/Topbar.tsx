@@ -26,6 +26,8 @@ export default function Topbar({
                 object-left
                 max-h-6
                 w-min
+                dark:brightness-0
+                dark:invert
                 "
                  />}
                 {!brandLogo && brandName && <span>{brandName}</span>}

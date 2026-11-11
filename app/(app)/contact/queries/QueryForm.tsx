@@ -12,6 +12,7 @@ import { SelectValue } from '@/components/ui/select'
 import { Turnstile } from '@marsidev/react-turnstile'
 import { useState } from 'react';
 import { useToast } from "@/hooks/use-toast"
+import { useTheme } from "@/hooks/use-theme"
 import { Loader2 } from "lucide-react";
 import posthog from 'posthog-js';
 
@@ -24,6 +25,7 @@ const formSchema = z.object({
 
 export default function QueryForm() {
     const { toast } = useToast()
+    const { theme } = useTheme()
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -136,12 +138,14 @@ export default function QueryForm() {
                         }
                     } />
 
+                    {/* Keyed by theme so the widget re-renders when the theme changes. */}
                     <Turnstile
+                        key={theme}
                         className='my-4'
                         siteKey='0x4AAAAAAA4aVCLbIJuXc6yO'
                         options={
                             {
-                                theme: 'light',
+                                theme,
                             }
                         }
                     />
