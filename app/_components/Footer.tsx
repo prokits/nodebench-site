@@ -29,7 +29,7 @@ export default function Footer() {
                 <Link href="/ethics-statement">Ethics Statement</Link>
             </div>
 
-            <hr className="border-t border-white dark:border-border" />
+            <hr className="border-t border-white dark:border-white/30" />
 
             <div className="py-4">
                 <p>

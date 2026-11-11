@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <header className="bg-brand_orange text-white mb-14 dark:bg-transparent dark:text-foreground">
+      <header className="bg-brand_orange text-white mb-14">
         <Navbar />
       </header>
       {children}
       <Toaster />
-      <footer className="bg-brand_orange text-white px-6 py-12 pb-2 border-t-8 border-red-300 dark:bg-surface-subtle dark:text-foreground dark:border-brand_orange">
+      <footer className="bg-brand_orange text-white px-6 py-12 pb-2 border-t-8 border-red-300 dark:bg-brand_orange-dark dark:border-brand_orange">
         <Footer />
       </footer>
     </>

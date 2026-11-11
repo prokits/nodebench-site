@@ -15,7 +15,6 @@ function Navlink({
         href={href}
         className="
           hover:text-orange-50
-            dark:hover:text-brand_orange
             transition-colors
             duration-300
             "
@@ -28,7 +27,7 @@ function Navlink({
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand_orange border-b-4 border-red-300 dark:bg-background dark:border-brand_orange">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand_orange border-b-4 border-red-300 dark:bg-brand_orange-dark dark:border-brand_orange">
       <div className="container max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/">
           <Image src="/images/logo.png" alt="nodebench" width={170} height={20} className="w-[140px] sm:w-[170px] h-auto" />

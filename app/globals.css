@@ -37,6 +37,10 @@ body {
     /* Brand. #F35541 and #E0A7A7 */
     --brand-orange: 6.7 88.1% 60.4%;
     --brand-orange-light: 0 47.9% 76.7%;
+    /* The brand orange in shadow (#712919). Fills the nav and footer in
+       dark mode. Hue nudged ~4deg toward orange, because darker colours
+       read redder than they are. */
+    --brand-orange-dark: 11 64% 27%;
 
     /* Card surfaces, named by how far they sit from the page background.
        Light values are exactly Tailwind gray-100 / gray-200 / gray-300. */

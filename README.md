@@ -144,10 +144,11 @@ To keep new components working in both themes, use the theme tokens instead of r
 | Card | `bg-surface` | gray-200 | charcoal +5% |
 | Card, strong | `bg-surface-strong` | gray-300 | charcoal +8% |
 | Brand | `bg-brand_orange`, `text-brand_orange` | #F35541 | #F35541 |
+| Brand, deep (nav and footer in dark mode) | `bg-brand_orange-dark` | #712919 | #712919 |
 | Brand tint | `bg-brand_orange-light/20` … `/50` | dusty pink #E0A7A7 | deep brick |
 | Lines | `border-border` | light grey | warm dark grey |
 
-In dark mode, orange becomes a signal rather than a surface: the nav and footer turn charcoal and keep an orange edge, while buttons and headers like "At a Glance" stay solid orange. If you must use a raw Tailwind grey, add a `dark:` pair next to it (for example `text-gray-600 dark:text-muted-foreground`).
+In dark mode the nav and footer keep their orange fill, turned down to `brand_orange-dark`, with a bright `#F35541` edge in place of the pink one. That's the same fill-plus-lighter-edge pattern as light mode. Buttons and headers like "At a Glance" stay full orange. If you must use a raw Tailwind grey, add a `dark:` pair next to it (for example `text-gray-600 dark:text-muted-foreground`).
 
 Photos with a light backdrop baked in (like the homepage section backgrounds) should go through `BackgroundImageSection`, which dims them and fades them into the page in dark mode.
 

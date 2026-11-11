@@ -44,8 +44,8 @@ export default function ThemeToggle({ className }: { className?: string }) {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
         "grid place-items-center size-8 -my-1",
-        "hover:text-orange-50 dark:hover:text-brand_orange transition-colors duration-300",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-brand_orange",
+        "hover:text-orange-50 transition-colors duration-300",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
         className
       )}
     >

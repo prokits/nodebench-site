@@ -12,7 +12,8 @@ export default {
 			colors: {
 				brand_orange: {
 					DEFAULT: 'hsl(var(--brand-orange) / <alpha-value>)',
-					light: 'hsl(var(--brand-orange-light) / <alpha-value>)'
+					light: 'hsl(var(--brand-orange-light) / <alpha-value>)',
+					dark: 'hsl(var(--brand-orange-dark) / <alpha-value>)'
 				},
 				surface: {
 					subtle: 'hsl(var(--surface-subtle) / <alpha-value>)',
