@@ -1,89 +1,282 @@
 import Topbar from '../_components/Topbar.tsx'
 import Glance from '../_components/Glance.tsx'
+import Figure from '../_components/Figure.tsx'
 
 import raspberryHero from './images/raspberrypi5_top.jpg'
+import board16gb from './images/pi5-16gb-board.jpg'
+import portsPhoto from './images/pi5-ports.jpg'
+import pcieConnector from './images/pi5-pcie-connector.jpg'
+import activeCooler from './images/pi5-active-cooler.jpg'
+import hailoHat from './images/pi5-m2-hat-hailo.jpg'
 
 export const metadata = {
     title: 'Raspberry Pi 5 Review',
-    description: 'The Raspberry Pi 5 is the best single board computer for AI workloads, comes with Jetpack 6 SDK for development.',
-    date: '28 Dec 2024',
+    description: 'Three years after launch, the Pi 5 is still the best-supported single board computer you can buy. We look at performance, heat, AI add-ons and the 2026 memory price hikes to work out which model is worth buying in India.',
+    date: '11 Nov 2026',
     authors: [{name: "Tushar Gaurav", url: "https://tushgaurav.in"}],
-   
 }
 
 export const reviewInfo = {
     productData: {
-        launchDate: '28 Dec 2025',
-        price: '$199',
-        gpu: 'Orin',
+        launchDate: 'October 2023',
+        launchPrice: '$60 (4GB)',
+        priceInIndia: '₹11,360 (4GB)',
+        processor: '4× Cortex-A76, 2.4GHz',
+        gpu: 'VideoCore VII',
+        ram: '1GB to 16GB',
+        idlePower: 'About 2.8W',
+        inProduction: 'Until at least 2036',
     },
-   thumbnail: "/images/review/raspberry-pi-5/thumbnail.png"
+    thumbnail: "/images/review/raspberry-pi-5/thumbnail.png"
 }
 
 <Topbar
+    brandName='Raspberry Pi'
     brandLogo='/images/brands/raspberry_pi.png'
-    title="Raspberry Pi 5"
+    title="Raspberry Pi 5 Review"
     author='Tushar Gaurav'
-    date='1 Jan 2025'
-      />
+    date='11 Nov 2026'
+/>
 
 <Glance
     images={[
         {
             src: raspberryHero,
-            alt: 'Jetson Orin Nano'
+            alt: 'Raspberry Pi 5 board, top view'
         },
-        
     ]}
-    productData={
-        {
-            launchDate: '28 Dec 2025',
-            price: '$199',
-            gpu: 'Orin',
-        }
-    }
-    description='The best single board computer for AI workloads, comes with Jetpack 6 SDK for development.'
+    productData={reviewInfo.productData}
+    description='The best-supported single board computer you can buy, now at memory-shortage prices. Get the 4GB model with the Active Cooler, and skip the 16GB.'
 />
 
-# Summary
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Raspberry Pi 5 went on sale in October 2023 at $60 for the 4GB model and $80 for the 8GB. Three years later it is still Raspberry Pi's flagship, and it will stay that way for a while. In a Reddit AMA in May 2026, the company said not to expect a [Pi 6 before early 2028](https://www.jeffgeerling.com/blog/2026/news-about-raspberry-pi-6-and-microcontroller-development/).
 
-# IOs
+The hardware has barely changed since launch, but the price has climbed steadily. AI data centres are buying up memory fab capacity, and by April 2026 Raspberry Pi said the LPDDR4 memory it uses cost [seven times what it did a year earlier](https://www.raspberrypi.com/news/a-new-3gb-raspberry-pi-4-for-83-75-and-more-memory-driven-price-increases/). The company has raised prices five times since December 2025. The 4GB board now costs $110, the 8GB costs $175, and the 16GB went to [$385 on 2 November](https://www.raspberrypi.com/news/price-rises-for-some-16gb-raspberry-pi-products/). In India, [Silverline Electronics](https://www.silverlineelectronics.in/collections/raspberry-pi-5-official-accessories) lists the 4GB at ₹11,360 and the 8GB at ₹16,950.
 
-Experienced developers love open - source products because they've seen the opposite. They've struggled to debug a “black box” closed - source tool, or worse, had a previously open tool change licenses or close its source code.
+The launch reviews settled whether the Pi 5 is a capable board. This one asks whether it is worth its late-2026 price, and which memory size makes sense now that every extra gigabyte costs real money.
 
-![Jetson Orin Nano](/images/review/jetson-orin-nano/jetson_io.png)
+# Our verdict
 
-[Open-source](/n/open-source) tools often have better documentation, as well. New developers love open - source products because they're learning skills that help them advance in their career—their knowledge transfers from company to company. Open-source tools often have better documentation, as well.
+Buy the 4GB model. It runs Home Assistant, Pi-hole, a handful of Docker containers, camera and robotics projects, or a light Linux desktop, and at ₹11,360 it is the last Pi 5 that feels reasonably priced. Pay for the 8GB only if you will use it as a daily desktop or want to run small language models. Skip the 16GB. At ₹36,900 it costs more than an Intel N150 mini PC with 16GB of RAM and a 512GB SSD.
 
-New developers love open - source products because they're learning skills that help them advance in their career—their knowledge transfers from company to company. Open-source tools often have better documentation, as well.
+If all you want is a small, quiet Linux box and you have no use for GPIO pins, cameras or HATs, a mini PC gives you more for the money in 2026. The Pi earns its price when you need what a mini PC can't offer: a 40-pin GPIO header, camera connectors, the HAT ecosystem built around them, and a production commitment that runs until at least January 2036.
+
+**What we like**
+
+- Software support no other SBC maker matches. Raspberry Pi OS is on Debian 13 and Linux 6.18, and the Pi 4 from 2019 still gets the same updates.
+- Quick enough on a single core for a desktop and most home-server jobs, while idling at around 2.8W.
+- The PCIe connector makes NVMe boot and AI accelerators official, supported add-ons.
+- The ₹430 Active Cooler holds it at 60 to 63°C under sustained load.
+
+**What we don't**
+
+- The 4GB costs 83 percent more than at launch and the 8GB 119 percent more. The 16GB has more than tripled.
+- No hardware H.264 decoding and no hardware video encoder at all, which rules it out as a transcoding media server.
+- One PCIe 2.0 lane. Gen 3 works on many drives but isn't officially supported.
+- Micro-HDMI ports, no headphone jack, and a 5A USB-C supply is needed to run USB drives properly.
+
+# What's on the board
+
+The Pi 5 is built around Broadcom's BCM2712, the same chip used in the Raspberry Pi 500, 500+ and Compute Module 5. It has four Arm Cortex-A76 cores at 2.4GHz, each with 512KB of L2 cache and sharing 2MB of L3, plus a VideoCore VII GPU and a 32-bit LPDDR4X memory interface that [Raspberry Pi rates at up to 17GB/s](https://github.com/raspberrypi/documentation/blob/master/documentation/asciidoc/computers/processors/bcm2712.adoc).
+
+Most of the ports hang off RP1, an I/O controller Raspberry Pi designed in-house, which talks to the main chip over four PCIe lanes. The Pi 4 pushed all of its USB traffic through a single PCIe lane. On the Pi 5, both USB 3.0 ports can run at 5Gbps at the same time.
+
+<Table data={{
+    headers: ["Part", "Specification"],
+    rows: [
+        ["CPU", "4× Arm Cortex-A76 at 2.4GHz (Broadcom BCM2712)"],
+        ["GPU", "VideoCore VII, OpenGL ES 3.1, Vulkan 1.3"],
+        ["Memory", "1GB, 2GB, 4GB, 8GB or 16GB LPDDR4X-4267"],
+        ["Storage", "microSD (SDR104), NVMe through PCIe 2.0 x1 with an M.2 HAT"],
+        ["Display", "2× micro-HDMI, 4K at 60Hz with HDR"],
+        ["Video decode", "HEVC up to 4K60 in hardware, everything else in software"],
+        ["USB", "2× USB 3.0, 2× USB 2.0"],
+        ["Networking", "Gigabit Ethernet (PoE+ with a HAT), dual-band Wi-Fi 5, Bluetooth 5.0"],
+        ["Camera and display", "2× 4-lane MIPI connectors, each usable for a camera or a display"],
+        ["Power", "5V/5A over USB-C with Power Delivery"],
+        ["Extras", "Power button, real-time clock, fan header, UART debug port"],
+    ]
+}} />
+
+A few smaller additions fix long-standing annoyances. The power button means you no longer pull the cable to turn the board off. The real-time clock keeps time through a power cut if you fit the ₹620 official battery, which helps on a board that may not have internet when it boots. The UART header lets you read the boot log with Raspberry Pi's ₹880 Debug Probe instead of wiring jumper leads to the GPIO pins.
+
+<Figure
+    src={board16gb}
+    alt="Raspberry Pi 5 16GB board, top view"
+    caption="The 16GB Pi 5 uses the D0 stepping of the BCM2712, visible in the chip markings, and has its memory size printed on the board."
+    credit="Photo: Anil Öztas / Wikimedia Commons, CC BY 4.0"
+    creditUrl="https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5_--_2025_--_0009-16.jpg"
+/>
+
+Raspberry Pi dropped the Pi 4's 3.5mm audio and composite video jack and kept micro-HDMI, so most people will need an adapter or new cables. The Ethernet port has also moved to the opposite corner, which is one reason Pi 4 cases don't fit.
+
+<Figure
+    src={portsPhoto}
+    alt="Raspberry Pi 5 USB and Ethernet ports, side view"
+    caption="Two USB 3.0 ports (blue), two USB 2.0 ports and Gigabit Ethernet on the short edge."
+    credit="Photo: RetroEditor / Wikimedia Commons, CC BY 4.0"
+    creditUrl="https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5_Computer.jpg"
+/>
 
 # Performance
 
-Developers don't want to talk to your sales team. They want to try out the product with as little friction as possible. Start free, then grow, once they've validated the product works and will solve their needs.
+Raspberry Pi says the Pi 5 is two to three times faster than the Pi 4, and published benchmarks back that up. The board also got faster after launch. In late 2024, Raspberry Pi engineers [tightened the SDRAM refresh timings](https://www.jeffgeerling.com/blog/2024/raspberry-pi-boosts-pi-5-performance-sdram-tuning/) after Micron confirmed its chips were tested at the faster settings, and added NUMA emulation to the kernel so memory allocations are spread across the chip's banks.
 
-There are exceptions to this rule.You might have procured software that required months of negotiations, license keys to get access, and hand guided provisioning of resources from a human.But ask your developer—they would have preferred if they could have started self - serve.
+Jeff Geerling keeps a [public test log](https://github.com/geerlingguy/sbc-reviews/issues/21) for the Pi 5, and we use his numbers throughout this review. He measured Geekbench 6 scores of 833 single-core and 1,805 multi-core on launch firmware, and 904 and 2,164 on the same board after the December 2024 updates. That is 8 percent more on one core and 20 percent more across four, delivered through normal Raspberry Pi OS and firmware updates.
 
-# Thermals
+Against the obvious alternatives, the Pi 5 holds its own on a single core. Rockchip's RK3588 uses the same Cortex-A76 cores and adds four smaller Cortex-A55s, which puts it about 40 percent ahead in multi-core work. An Intel N150 mini PC is about 40 percent faster on a single core.
 
-The better the documentation, the more likely the developer is to try your product.
+<Table data={{
+    headers: ["Board", "CPU", "Geekbench 6 (single / multi)", "Idle power", "Price in India"],
+    rows: [
+        ["Raspberry Pi 5, 8GB", "4× Cortex-A76", "904 / 2,164", "About 2.8W", "₹16,950"],
+        ["Orange Pi 5 Plus, 8GB", "4× Cortex-A76 + 4× Cortex-A55", "863 / 3,117", "2.8W", "₹26,550 to ₹32,000"],
+        ["Intel N150 mini PC, 16GB + 512GB SSD", "4× Gracemont", "1,258 / 3,010", "4.6W to 13W", "₹20,062 to ₹34,999"],
+    ]
+}} />
 
-This isn't about specific UI features like dark mode or ⌘+K search dialogs. How quickly can they find an answer to their problem? Great documentation is either a reference guide or an educational tool.
+The Orange Pi figures come from [sbc.compare](https://sbc.compare/orange-pi-5-plus), the N150 scores from [NanoReview](https://nanoreview.net/en/cpu/intel-processor-n150), and the N150 idle range from a [roundup of 19 published measurements](https://picklog.cc/blog/n150-mini-pc-power-consumption). Different testers used different operating systems, so treat the gaps as approximate.
 
-Educational material should be equally compelling for both beginners and experts.Experts love to hear concepts explained in a simple way.Beginners want new concepts progressively explained.Don't drop ten new concepts and five acronyms right away. Write like you're teaching beginners.
+For most of what people buy a Pi for, memory and single-core speed matter more than core count. Home Assistant, Pi-hole and a few containers leave the CPU mostly idle. The Pi 5 runs short on sustained parallel work, such as compiling large projects, transcoding video or running several heavy containers at once. That is where the RK3588's extra cores, or the N150's faster ones, pay off.
 
-# Conclusion
+Memory decides how far you can push it as a desktop. In [Robocraze's tests](https://robocraze.com/products/raspberry-pi-5-4gb), 50 Chromium tabs used about 4GB on the 8GB board and would not finish loading on the 4GB one. With five tabs open, both models used around 1.6GB. If you live in a browser, get the 8GB.
 
-When developers can't find the answers in your docs, they'll reach out to support.
+# Video playback and encoding
 
-They want to talk to someone who empathizes and understands their problems.It's easy to tell whether the support person actually “gets it”. Minimize the number of hops between problem and solution, ideally cutting out layers of humans in the middle.
+This is where the Pi 5 is weakest. The BCM2712 decodes one codec in hardware, HEVC (H.265) at up to 4K60. Raspberry Pi removed the H.264 decode and encode blocks that every earlier Pi had, on the grounds that the Cortex-A76 cores could handle more streams in software than the old hardware could. Its documentation puts 1080p60 H.264 playback at 50 to 60 percent CPU, and 1080p30 encoding from the camera at 30 to 40 percent.
 
-This is why roles like Developer Advocates or Customer Success Engineers exist.Developers expect to talk to developers.
+Raspberry Pi OS works around this for YouTube. Since April 2026, Chromium ships with the h264ify extension, which asks YouTube for H.264 instead of VP9 or AV1. With no hardware decoder for any of them, H.264 is the cheapest of the three to decode in software.
 
-## You should be part of a community
+For camera projects the software encoder holds up well. A [Raspberry Pi white paper](https://pip-assets.raspberrypi.com/categories/685-app-notes-guides-whitepapers/documents/RP-010033-WP-1-H.264%20encoding%20performance%20on%20Raspberry%20Pi%205_series%20computers.pdf) found that it encodes 1080p30 in real time using 60 to 90 percent of a single core in low-latency mode. In high-quality mode it scores 2 to 3dB better on PSNR than the Pi 4's hardware encoder at bitrates between 0.5 and 5Mb/s, and it can go below the roughly 240kb/s floor of the old hardware.
 
-Where do developers go to hang out ? Online and in -person communities.
+The Pi 5 is a poor fit for a transcoding media server. If you want Jellyfin or Plex to transcode for phones and remote viewers, every transcode lands on the four CPU cores. Playing files your TV can already handle is fine. For transcoding, an Intel machine with Quick Sync, which the N150 has, does the job far better.
 
-This doesn't mean you need to _start_ a community for your product. In fact, you probably shouldn't.Instead, look at where the developers are already spending time.Go there.Talk to them and contribute to the discourse.
+# Storage and PCIe
 
-[Communities](/n/moderation) are not a transactional relationship.You are there to provide value.This is a long game, sometimes taking years to materialize value back, but then obvious in hindsight.
+The single PCIe 2.0 lane, exposed through a small ribbon connector on the edge of the board, is the most useful thing the Pi 5 added. With the ₹910 official M.2 HAT+ and a 2230 or 2242 NVMe drive, the Pi boots and runs from an SSD.
+
+<Table data={{
+    headers: ["Storage", "Sequential read", "4K random read"],
+    rows: [
+        ["SanDisk Extreme microSD", "91.5 MB/s", "9.9 MB/s"],
+        ["SanDisk Extreme Pro USB 3.1 flash drive", "301 MB/s", "13.9 MB/s"],
+        ["NVMe SSD, PCIe Gen 2 (default)", "454 MB/s", "65.5 MB/s"],
+        ["NVMe SSD, PCIe Gen 3 (unofficial)", "894 MB/s", "69.8 MB/s"],
+    ]
+}} />
+
+Random reads are the small, scattered reads behind app launches and package installs, and NVMe does them more than six times faster than the microSD card. You can also force the link to Gen 3 by adding `dtparam=pciex1_gen=3` to `/boot/firmware/config.txt`, which nearly doubled sequential reads in Geerling's tests. Raspberry Pi doesn't certify Gen 3 on this connector and some drives won't be stable at that speed, so test yours before you trust it with data.
+
+There is only one lane. An NVMe drive and an AI accelerator can't use it at the same time unless you add a third-party PCIe switch board. The official 256GB SSD Kit, which bundles the M.2 HAT+ with a Raspberry Pi-branded drive, is listed at ₹5,990 at Silverline (out of stock when we checked) and ₹7,174 at Robu.
+
+<Figure
+    src={pcieConnector}
+    alt="Raspberry Pi 5 PCIe ribbon connector next to the power button, with the Active Cooler fitted"
+    caption="The PCIe ribbon connector sits on the short edge, next to the power button."
+    credit="Photo: RetroEditor / Wikimedia Commons, CC BY 4.0"
+    creditUrl="https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5_Active_Cooler_PCI.jpg"
+/>
+
+# Networking
+
+Gigabit Ethernet delivers its full speed, 938Mbps up and 942Mbps down in Geerling's iperf3 runs. Wi-Fi 5 managed 186 to 207Mbps. Use Ethernet for anything that moves files.
+
+On a NAS, Gigabit caps transfers at around 110 to 115MB/s, well below what an NVMe drive on the Pi can read, so the network is the bottleneck. A USB 2.5GbE adapter raises the ceiling, but results vary. Geerling saw 1.55Gbps in one direction and only 300Mbps in the other with his adapter, so look up reports for the exact model before you buy one.
+
+# Heat and power
+
+[Raspberry Pi's own lab](https://www.raspberrypi.com/news/heating-and-cooling-raspberry-pi-5/) measured an uncooled Pi 5 idling at around 65°C. Under a sustained all-core load it climbed past 85°C and stayed there, throttling the whole time. The CPU starts slowing down at 80°C and cuts harder at 85°C.
+
+With the ₹430 Active Cooler fitted, the same tests showed an idle temperature of about 45°C and 60 to 63°C under extended load. The fan stays off below 50°C, steps up at 50, 60, 67.5 and 75°C, and never needed full speed during Raspberry Pi's testing, where it measured 35 to 40dB. With the fan unplugged and only the heatsink doing the work, the board started throttling after about 200 seconds of load.
+
+Those tests ran on a lab bench. In an Indian room at 35°C in May, every one of those temperatures goes up, and an uncooled Pi will reach its throttle point sooner. Count the Active Cooler as part of the price. The official ₹855 case has its own small fan and peaked at 72 to 74°C under load in Raspberry Pi's tests, which is fine for most jobs but leaves less headroom in summer.
+
+<Figure
+    src={activeCooler}
+    alt="Raspberry Pi 5 with the official Active Cooler installed"
+    caption="The Active Cooler clips on with spring-loaded pins and plugs into the fan header next to the USB ports."
+    credit="Photo: SimonWaldherr / Wikimedia Commons, CC BY 4.0"
+    creditUrl="https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5_with_active_cooler.jpg"
+/>
+
+At the wall, Geerling measured 2.8W at idle, 7.9W during a Geekbench multi-core run and 9.7W in a stress-ng torture test. The Pi 5 needs a 5V, 5A USB-C Power Delivery supply to give its USB ports their full 1.6A. On an ordinary 3A phone charger it still boots, but it limits USB devices to 600mA in total, which may not be enough for a portable SSD. The official 27W supply costs ₹1,020 at Silverline.
+
+Low idle power is a real advantage over a mini PC, but in rupees it is small. Running around the clock, a Pi 5 at 2.8W uses about 25 units of electricity a year. An N150 mini PC idling at 8W uses about 70. At ₹8 a unit, the difference comes to roughly ₹365 a year.
+
+# Software
+
+Software is the strongest reason to buy a Raspberry Pi over a faster board from Orange Pi or Radxa. Raspberry Pi OS moved to [Debian 13 "Trixie"](https://www.raspberrypi.com/news/trixie-the-new-version-of-raspberry-pi-os/) in October 2025, and the current image, released on 6 October 2026, runs Linux 6.18. Passwordless sudo has been off by default since April 2026, and swap now uses [zram](https://github.com/raspberrypi/rpi-swap), compressed swap kept in RAM, with idle pages written to disk once a day. That cuts SD card wear and gives the 1GB, 2GB and 4GB boards more breathing room.
+
+Ubuntu and Home Assistant OS both support the Pi 5, and Raspberry Pi Imager flashes any of them to a card or SSD. Raspberry Pi Connect, the company's free remote-access service, gives you the desktop or a shell in a browser without setting up port forwarding. The Pi 4 from 2019 runs the same OS and gets the same updates.
+
+RK3588 boards have closed much of the performance gap, but their software still depends on which image you pick. The Orange Pi 5 Plus that sbc.compare tested ran Debian 12 on a 6.1 vendor kernel, and support for the NPU and hardware video decoding varies between images. Armbian does a lot of the work, but you are relying on community maintainers instead of the company that made the board.
+
+# Running AI models
+
+The Pi 5's CPU can run small language models at usable speeds. In [CNX Software's tests](https://www.cnx-software.com/2026/01/20/raspberry-pi-ai-hat-2-review-a-40-tops-ai-accelerator-tested-with-computer-vision-llm-and-vlm-workloads/), Qwen2 1.5B generated 11.29 tokens per second and Llama 3.2 3B managed 4.78. A 3B model quantised to 4 bits needs about 2GB of RAM, so it fits on the 4GB board, but the 8GB gives you room to run it next to other services.
+
+The [AI HAT+ 2](https://www.raspberrypi.com/products/ai-hat-plus-2/) adds a Hailo-10H accelerator, rated at 40 TOPS for INT4, with its own 8GB of memory. It costs $200, or ₹21,400 at Silverline, which is more than the 8GB Pi it plugs into. It also generates text more slowly than the CPU. CNX measured 5.89 tokens per second for Qwen2 1.5B, about half the CPU figure. The [Edge-LLM-Bench](https://dl.acm.org/doi/pdf/10.1145/3812836.3814998) study found the same, and also measured a 51 percent drop in total system power with the CPU and main memory left free. Buy one if the Pi has other work to do while the model runs, such as a camera pipeline or Home Assistant.
+
+For computer vision, like object detection on a camera feed, the older AI HAT+ is the better buy at ₹6,350 for the 13 TOPS version and ₹10,100 for 26 TOPS. Raspberry Pi says the AI HAT+ 2 performs about the same as the 26 TOPS model on vision work, so you would be paying for 8GB of memory you don't use. If you need CUDA, TensorRT or ROS for robotics, NVIDIA's Jetson Orin Nano is built for that work.
+
+<Figure
+    src={hailoHat}
+    alt="Hailo AI accelerator module on the Raspberry Pi M.2 HAT+ mounted on a Raspberry Pi 5"
+    caption="A Hailo accelerator module on the official M.2 HAT+. The AI HAT+ boards mount the Hailo chip directly on the HAT."
+    credit="Photo: RetroEditor / Wikimedia Commons, CC BY 4.0"
+    creditUrl="https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5_Hailo_AI_Accelerator_Module.jpg"
+/>
+
+Don't expect the Pi 6 to add an NPU either. In the May AMA, Eben Upton said the company sees ["the CPU as the venue for much edge AI compute"](https://www.omgubuntu.co.uk/2026/05/raspberry-pi-6-2028-no-npu), and that the next board will keep a similar feature set with faster CPUs, I/O and memory bandwidth.
+
+# Prices in India
+
+Raspberry Pi raised prices on [1 December 2025](https://www.raspberrypi.com/news/1gb-raspberry-pi-5-now-available-at-45-and-memory-driven-price-rises/), [2 February 2026](https://www.raspberrypi.com/news/more-memory-driven-price-rises/), [1 April 2026](https://www.raspberrypi.com/news/a-new-3gb-raspberry-pi-4-for-83-75-and-more-memory-driven-price-increases/) and again in October and November. The 1GB model, added in December 2025 at $45, is the only one that hasn't moved.
+
+<Table data={{
+    headers: ["Model", "Launch price", "US price now", "Silverline (India)"],
+    rows: [
+        ["1GB", "$45 (Dec 2025)", "$45", "₹4,675"],
+        ["2GB", "$50 (Aug 2024)", "$77.50", "₹7,660"],
+        ["4GB", "$60 (Oct 2023)", "$110", "₹11,360"],
+        ["8GB", "$80 (Oct 2023)", "$175", "₹16,950"],
+        ["16GB", "$120 (Jan 2025)", "$385", "₹36,900"],
+    ]
+}} />
+
+Robocraze, another official reseller, listed the 4GB at ₹13,409 and the 8GB at ₹19,999, though the 8GB was sold out. The 16GB's Indian price may rise further once stock from after the November increase arrives. Buy from an approved reseller rather than a marketplace seller. Raspberry Pi has warned about people reselling boards at inflated prices during the shortage, and says it will roll the increases back when memory prices fall, without giving a date.
+
+The board is only part of the bill. Here is what a working setup costs at Silverline's prices.
+
+<Table data={{
+    headers: ["Part", "4GB setup", "8GB setup"],
+    rows: [
+        ["Raspberry Pi 5", "₹11,360", "₹16,950"],
+        ["Official 27W USB-C power supply", "₹1,020", "₹1,020"],
+        ["Active Cooler", "₹430", "₹430"],
+        ["256GB SSD Kit (includes M.2 HAT+)", "₹5,990", "₹5,990"],
+        ["Total", "₹18,800", "₹24,390"],
+    ]
+}} />
+
+Leave out the SSD Kit and boot from a microSD card if storage speed doesn't matter for your project.
+
+An Intel N150 mini PC with 16GB of RAM and a 512GB SSD costs about [₹20,000 to ₹22,000](https://www.banggood.in/Ninkear-MBOX-11-13th-Intel-Twin-Lake-N150-Mini-PC-16GB-RAM-512GB-SSD-WiFi-5-4K-Dual-Output-HD-Windows-11-Pro-Mini-Gaming-Computer-Desktop-PC-reviews-p2028866.html) imported through Banggood India, or ₹32,000 to ₹35,000 for an Indian-brand box like the SkullSaints Rudra. It comes with a case and power supply, runs Windows or any x86 Linux, and has Quick Sync for video. You lose the GPIO header, the camera connectors and the HAT ecosystem.
+
+RK3588 boards are faster at multi-threaded work and bring extras like dual 2.5GbE and onboard M.2 slots, but Indian pricing is erratic. The 8GB Orange Pi 5 Plus ranged from ₹26,550 to ₹32,000 at smaller sellers and topped ₹54,000 on Amazon. [Hubtronics](https://hubtronics.in/radxa-rock-5b-plus-8gb-no-emmc) lists the 8GB Radxa ROCK 5B+ at ₹12,499, which would undercut the Pi, but it had no stock when we checked.
+
+# Which one to buy
+
+**4GB, ₹11,360.** The one to get. Home Assistant, Pi-hole, a few Docker containers, robotics and camera projects, and a light desktop all fit. Budget ₹12,810 with the official power supply and Active Cooler.
+
+**8GB, ₹16,950.** For a daily desktop with lots of browser tabs, a busier container host, or a 3B language model running next to other services.
+
+**2GB, ₹7,660, and 1GB, ₹4,675.** For boards that do one job, like a print server, a kiosk or a sensor logger.
+
+**16GB, ₹36,900.** Skip it. The same money buys an N150 mini PC with 16GB of RAM and an SSD, with about ₹15,000 left over.
+
+If you already own a Pi 4 that does its job, keep it. It runs the same Raspberry Pi OS, and there is little reason to pay 2026 prices to replace a board that isn't struggling.
+
+# How we put this review together
+
+Performance, power, storage and network figures come from Jeff Geerling's public Pi 5 test log, Raspberry Pi's documentation and lab tests, CNX Software, sbc.compare and the Edge-LLM-Bench study, all linked above. We checked Indian prices at Silverline Electronics, Robocraze, Robu and Hubtronics on 11 November 2026. They change often, so check before you order.

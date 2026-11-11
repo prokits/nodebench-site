@@ -1,9 +1,9 @@
 [
   {
-    "title": "Nvidia Jetson Orin Nano Review",
+    "title": "Jetson Orin Nano Super Review",
     "url": "review/jetson-orin-nano",
-    "description": "The Nvidia Jetson Orin Nano is the best single board computer for AI workloads, comes with Jetpack 6 SDK for development.",
-    "date": "1 Jan 2025",
+    "description": "The Orin Nano Super is the same 2023 developer kit with higher clocks, now listed at $399. We compare NVIDIA's own model benchmarks with an independent run, and check what it costs in India against a Pi 5.",
+    "date": "11 Nov 2026",
     "authors": [
       {
         "name": "Tushar Gaurav",
@@ -11,17 +11,22 @@
       }
     ],
     "productData": {
-      "launchDate": "28 Dec 2025",
-      "price": "$199",
-      "gpu": "Orin"
+      "launchDate": "March 2023",
+      "launchPrice": "$499",
+      "priceInIndia": "₹34,679 (listed)",
+      "processor": "6× Cortex-A78AE, 1.7GHz",
+      "gpu": "Ampere, 1024 CUDA",
+      "ram": "8GB LPDDR5",
+      "power": "7W to 25W",
+      "inProduction": "Through 2032"
     },
     "thumbnail": "/images/review/jetson-orin-nano/jetson_io.png"
   },
   {
     "title": "Raspberry Pi 5 Review",
     "url": "review/raspberry-pi-5",
-    "description": "The Raspberry Pi 5 is the best single board computer for AI workloads, comes with Jetpack 6 SDK for development.",
-    "date": "28 Dec 2024",
+    "description": "Three years after launch, the Pi 5 is still the best-supported single board computer you can buy. We look at performance, heat, AI add-ons and the 2026 memory price hikes to work out which model is worth buying in India.",
+    "date": "11 Nov 2026",
     "authors": [
       {
         "name": "Tushar Gaurav",
@@ -29,9 +34,14 @@
       }
     ],
     "productData": {
-      "launchDate": "28 Dec 2025",
-      "price": "$199",
-      "gpu": "Orin"
+      "launchDate": "October 2023",
+      "launchPrice": "$60 (4GB)",
+      "priceInIndia": "₹11,360 (4GB)",
+      "processor": "4× Cortex-A76, 2.4GHz",
+      "gpu": "VideoCore VII",
+      "ram": "1GB to 16GB",
+      "idlePower": "About 2.8W",
+      "inProduction": "Until at least 2036"
     },
     "thumbnail": "/images/review/raspberry-pi-5/thumbnail.png"
   }

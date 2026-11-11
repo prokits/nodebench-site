@@ -1,96 +1,188 @@
 import Topbar from '../_components/Topbar.tsx'
 import Glance from '../_components/Glance.tsx'
+import Figure from '../_components/Figure.tsx'
 
 import jetsonHero from './images/jetson_orin.png'
+import portsPhoto from './images/jetson-ports.png'
 
 export const metadata = {
-    title: 'Nvidia Jetson Orin Nano Review',
-    description: 'The Nvidia Jetson Orin Nano is the best single board computer for AI workloads, comes with Jetpack 6 SDK for development.',
-    date: '1 Jan 2025',
+    title: 'Jetson Orin Nano Super Review',
+    description: 'The Orin Nano Super is the same 2023 developer kit with higher clocks, now listed at $399. We compare NVIDIA\'s own model benchmarks with an independent run, and check what it costs in India against a Pi 5.',
+    date: '11 Nov 2026',
     authors: [{name: "Tushar Gaurav", url: "https://tushgaurav.in"}],
 }
 
 export const reviewInfo = {
     productData: {
-        launchDate: '28 Dec 2025',
-        price: '$199',
-        gpu: 'Orin',
+        launchDate: 'March 2023',
+        launchPrice: '$499',
+        priceInIndia: '₹34,679 (listed)',
+        processor: '6× Cortex-A78AE, 1.7GHz',
+        gpu: 'Ampere, 1024 CUDA',
+        ram: '8GB LPDDR5',
+        power: '7W to 25W',
+        inProduction: 'Through 2032',
     },
     thumbnail: "/images/review/jetson-orin-nano/jetson_io.png"
 }
 
-
-
 <Topbar
+    brandName='NVIDIA'
     brandLogo='/images/brands/nvidia.png'
-    title="Jetson Orin Nano"
+    title="Jetson Orin Nano Super Review"
     author='Tushar Gaurav'
-    date='28 Dec 2025'  />
+    date='11 Nov 2026'
+/>
 
 <Glance
     images={[
         {
             src: jetsonHero,
-            alt: 'Jetson Orin Nano'
+            alt: 'Jetson Orin Nano Developer Kit retail box'
         },
-        {
-            src: jetsonHero,
-            alt: 'Jetson Orin Nano'
-        },
-        {
-            src: jetsonHero,
-            alt: 'Jetson Orin Nano'
-        }
     ]}
-    productData={
-        {
-            launchDate: '28 Dec 2025',
-            price: '$199',
-            gpu: 'Orin',
-        }
-    }
-    description='The best single board computer for AI workloads, comes with Jetpack 6 SDK for development.'
+    productData={reviewInfo.productData}
+    description='An 8GB CUDA board for cameras, robots and small models. Buy the developer kit if you need that stack, and confirm the Indian price before you order.'
 />
 
-# Summary
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+NVIDIA announced the Jetson Orin Nano Developer Kit on [21 March 2023](https://forums.developer.nvidia.com/t/announcing-jetson-orin-nano-developer-kit/246900) at $499, with shipping planned for April. The board in that box is the board on sale now. In December 2024 NVIDIA kept the hardware, raised the clocks through a new power mode, renamed the kit Super, and cut the price to [$249](https://developer.nvidia.com/blog/nvidia-jetson-orin-nano-developer-kit-gets-a-super-boost/). In July 2026 the list price went to [$399](https://www.cnx-software.com/2026/07/22/nvidia-increases-the-price-of-jetson-modules-and-devkits-by-up-to-101/). The new figure appeared in NVIDIA's [developer FAQ](https://developer.nvidia.com/embedded/faq). There was no announcement.
 
-# IOs
+[Robu](https://robu.in/product/nvidia-jetson-orin-nano-super-developer-kit/) and [AI Roboo](https://airoboo.in/product/nvidia-jetson-orin-nano-super-developer-kit/) both showed the kit at ₹34,679 on 11 November 2026. Against the new $399 list, that is about ₹87 to the dollar. A Pi 5 8GB at $175 and ₹16,950 works out to about ₹97 to the dollar, so the rupee price is in the same range as the July increase. What we could not confirm is stock. Robu's category page linked to the product instead of showing an add-to-cart button. Check that a shop can ship one before you pay.
 
-Experienced developers love open - source products because they've seen the opposite. They've struggled to debug a “black box” closed - source tool, or worse, had a previously open tool change licenses or close its source code.
+# Our verdict
 
-![Jetson Orin Nano](/images/review/jetson-orin-nano/jetson_io.png)
+Buy the developer kit if the project needs CUDA, TensorRT, or a camera decoded in hardware while a model runs. At the listed Indian price it costs about twice a [Pi 5 8GB](/review/raspberry-pi-5), which was ₹16,950 at Silverline the same day, and it does work the Pi does slowly.
 
-[Open-source](/n/open-source) tools often have better documentation, as well. New developers love open - source products because they're learning skills that help them advance in their career—their knowledge transfers from company to company. Open-source tools often have better documentation, as well.
+Leave it if you want a home server, a desktop, or Pi-hole. The Pi 5 is the cheaper board for that, with a normal Debian system and lower idle draw. Leave the bare 4GB module too. It has half the GPU, and a carrier pushes the total up to the 8GB kit.
 
-New developers love open - source products because they're learning skills that help them advance in their career—their knowledge transfers from company to company. Open-source tools often have better documentation, as well.
+If you already own an original Orin Nano developer kit, keep it. The Super clocks are a software update.
 
-# Performance
+**What we like**
 
-Developers don't want to talk to your sales team. They want to try out the product with as little friction as possible. Start free, then grow, once they've validated the product works and will solve their needs.
+- CUDA, TensorRT and DeepStream, the stack NVIDIA uses on its larger GPUs.
+- Hardware decode for H.265, H.264, AV1 and VP9, so a camera feed does not land on the CPU.
+- PCIe 3.0 x4 for an NVMe drive, plus a second M.2 slot at x2. A Pi 5 has one PCIe 2.0 lane.
+- The 19V supply, the heatsink and fan, and a wireless module all come in the box.
 
-There are exceptions to this rule.You might have procured software that required months of negotiations, license keys to get access, and hand guided provisioning of resources from a human.But ask your developer—they would have preferred if they could have started self - serve.
+**What we don't**
 
-# Thermals
+- The US price is $399, 60 percent above December 2024. We could not confirm either Indian shop had one ready to ship at ₹34,679.
+- No hardware video encoder. NVIDIA rates 1080p30 encoding as work for one or two CPU cores.
+- DisplayPort only. The USB-C port carries data, and a TV needs an adapter.
+- NVIDIA's own FAQ says the developer kit is for development and test. The module in the box is not the part you ship in a product.
+- 8GB is shared by the CPU and the GPU. NVIDIA's own table tops out at an 8B model.
 
-The better the documentation, the more likely the developer is to try your product.
+# What's on the board
 
-This isn't about specific UI features like dark mode or ⌘+K search dialogs. How quickly can they find an answer to their problem? Great documentation is either a reference guide or an educational tool.
+The [quick start guide](https://docs.nvidia.com/jetson/orin-nano-devkit/user-guide/latest/quick_start.html) lists three things in the box: the developer kit, a 19V supply, and a support card. The [hardware layout](https://docs.nvidia.com/jetson/orin-nano-devkit/user-guide/latest/hardware_layout.html) puts storage on a microSD slot on the module, or on an NVMe drive. Around the edge are four USB 3.2 ports at 10Gbps, gigabit Ethernet, DisplayPort, and a USB-C port that does not output video. Two 22-pin CSI connectors take cameras. Under the module there is an M.2 Key M slot for a 2280 drive at PCIe 3.0 x4, a second Key M slot for a 2230 drive at x2, and a Key E slot that ships with a wireless module fitted. The power jack is a 5.5mm by 2.5mm barrel.
 
-Educational material should be equally compelling for both beginners and experts.Experts love to hear concepts explained in a simple way.Beginners want new concepts progressively explained.Don't drop ten new concepts and five acronyms right away. Write like you're teaching beginners.
+<Figure
+    src={portsPhoto}
+    alt="Jetson Orin Nano developer kit, showing the USB ports, Ethernet, USB-C and power jack"
+    caption="Four USB 3.2 ports, gigabit Ethernet, a USB-C port for data only, and the barrel jack for the 19V supply."
+/>
 
-# Conclusion
+You bring your own storage. From JetPack 7 there is no SD card image. The installer goes on a USB stick and flashes a microSD card or an NVMe drive, and the board's UEFI firmware has to be version 36.0 or newer before that installer will run. An older kit needs the JetPack 6 update path first. NVIDIA documents both steps on the [JetPack 7.2.1 downloads page](https://developer.nvidia.com/embedded/jetpack/downloads) and in the [7.2 getting-started thread](https://forums.developer.nvidia.com/t/jetpack-7-2-jetson-linux-r39-2-on-jetson-orin-nano-developer-kit-getting-started-and-feedback-thread/372151).
 
-When developers can't find the answers in your docs, they'll reach out to support.
+A monitor has to take DisplayPort, or you need a DisplayPort-to-HDMI cable. NVIDIA says passive and active adapters both work. A Raspberry Pi Camera Module v2 needs a 15-pin to 22-pin cable. CAM0 is two CSI lanes. CAM1 can be two lanes or four. The 40-pin header is for prototyping, and its voltages are in the carrier specification rather than in the Pi header layout, so read that sheet before you plan around a Pi HAT.
 
-They want to talk to someone who empathizes and understands their problems.It's easy to tell whether the support person actually “gets it”. Minimize the number of hops between problem and solution, ideally cutting out layers of humans in the middle.
+<Table data={{
+    headers: ["Part", "Specification"],
+    rows: [
+        ["Module", "Jetson Orin Nano 8GB, on the reference carrier"],
+        ["CPU", "6× Arm Cortex-A78AE, up to 1.7GHz in Super mode"],
+        ["GPU", "Ampere, 1024 CUDA cores, 32 tensor cores, up to 1020MHz"],
+        ["AI performance", "67 sparse INT8 TOPS, 33 dense, 17 FP16 TFLOPS"],
+        ["Memory", "8GB 128-bit LPDDR5, 102GB/s in Super mode"],
+        ["Storage", "microSD, or NVMe on M.2 (PCIe 3.0 x4 and x2)"],
+        ["Video decode", "H.265, H.264, AV1, VP9 in hardware"],
+        ["Video encode", "1080p30 in software, on 1-2 CPU cores"],
+        ["USB", "4× USB 3.2 Gen 2, 1× USB-C (data only)"],
+        ["Display", "DisplayPort 1.2"],
+        ["Networking", "Gigabit Ethernet, wireless module in the M.2 Key E slot"],
+        ["Cameras", "2× 22-pin MIPI CSI"],
+        ["Power", "19V supply in the box, module modes 7W, 15W and 25W"],
+    ]
+}} />
 
-This is why roles like Developer Advocates or Customer Success Engineers exist.Developers expect to talk to developers.
+The silicon under the heatsink did not change in 2024. NVIDIA's [Super post](https://developer.nvidia.com/blog/nvidia-jetson-orin-nano-developer-kit-gets-a-super-boost/) puts the old rating at 40 sparse INT8 TOPS, 68GB/s of memory, a 635MHz GPU and a 1.5GHz CPU. Super mode moves that to 67 sparse TOPS (33 dense), 102GB/s, 1,020MHz and 1.7GHz, and adds a 25W power budget next to the old 7W and 15W modes. Any original developer kit can take the same mode with a JetPack update.
 
-## You should be part of a community
+The carrier was designed for more than this one module. At launch, NVIDIA said it accepts Orin Nano and Orin NX modules, so a later prototype can move to an NX without a new board. The NX is the one with a hardware video encoder.
 
-Where do developers go to hang out ? Online and in -person communities.
+# Running models
 
-This doesn't mean you need to _start_ a community for your product. In fact, you probably shouldn't.Instead, look at where the developers are already spending time.Go there.Talk to them and contribute to the discourse.
+NVIDIA published generation speeds with the Super launch. The figures below are tokens per second at INT4, through the MLC API, on the Super kit.
 
-[Communities](/n/moderation) are not a transactional relationship.You are there to provide value.This is a long game, sometimes taking years to materialize value back, but then obvious in hindsight.
+<Table data={{
+    headers: ["Model", "Original kit", "Super", "Gain"],
+    rows: [
+        ["Llama 3.1 8B", "14", "19.14", "1.37×"],
+        ["Llama 3.2 3B", "27.7", "43.07", "1.55×"],
+        ["Qwen2.5 7B", "14.2", "21.75", "1.53×"],
+        ["Gemma 2 2B", "21.5", "34.97", "1.63×"],
+        ["Phi 3.5 3B", "24.7", "38.1", "1.54×"],
+    ]
+}} />
+
+An independent run of the same 3B model lands much lower. [PicoCluster](https://picocluster-claw.com/reference/benchmarks/) tested a board they identify as an Orin Nano Super 8GB, on JetPack 6.2 with llama.cpp, on 2 April 2026. Llama 3.2 3B at Q4_K_M generated 18.4 tokens per second in MAXN mode, 17.2 in the 25W mode, and 13.3 in the 15W mode, for a 128-token generation after a 512-token prompt. That is under half of NVIDIA's MLC number. Quote the figure for the runtime you will use.
+
+On a Pi 5, [CNX Software](https://www.cnx-software.com/2026/01/20/raspberry-pi-ai-hat-2-review-a-40-tops-ai-accelerator-tested-with-computer-vision-llm-and-vlm-workloads/) measured Llama 3.2 3B at 4.78 tokens per second on the CPU. PicoCluster's lower Jetson figure is still about four times that, and it is running on CUDA. The Hailo chip on Raspberry Pi's AI HAT+ 2 was slower than the Pi's own CPU on the model CNX tried, and the HAT was ₹21,400 at Silverline. A Pi 5 8GB plus that HAT is ₹38,350, close to the Jetson's listed ₹34,679, and it runs a much shorter list of models.
+
+8GB of shared memory is the ceiling NVIDIA itself describes. The Super post talks about models up to about 8B parameters, and Llama 3.1 8B at 19 tokens per second is the top row of their table. A 13B model has to share that 8GB with the operating system and the context.
+
+The 1,020MHz GPU clock is the MAXN mode, not the 25W mode. PicoCluster measured 1,011 to 1,019MHz in MAXN, and about 910MHz with the 25W cap. In their logs the 25W mode also clocked the CPU lower than the 15W mode, 1,344MHz against 1,497MHz, and spent the extra budget on the GPU. On JetPack 6.1, NVIDIA's step for the top mode was `sudo nvpmodel -m 2`. The JetPack 7.2.1 installer flashes the Super configuration by default, so check the power-mode control on a new install instead of trusting the old mode number.
+
+# Video
+
+Decode is a separate block of silicon. NVIDIA's [module datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5380/Jetson_Orin_Nano_Series_DS-11105-001_v1.1.pdf) (DS-11105-001) lists a multi-standard decoder for H.265, H.264, VP9, AV1, MPEG-4, MPEG-2 and VC-1. The stream counts in that sheet, which predates the Super clocks, are one 4K60 or eleven 1080p30 in H.265, and one 4K30 or seven 1080p30 in H.264. Super mode does not add a decoder. It raises the clocks around the one already on the chip. DeepStream 9.1 is on the supported list for JetPack 7.2.1.
+
+Encoding is software, as it is on the Pi 5. The Orin Nano has no NVENC block. The datasheet, and the [later module sheet](https://static.generation-robots.com/media/jetson-orin-datasheet-nano-modules.pdf) that carries the Super clocks, both say 1080p30 encoding runs on one or two CPU cores in software. Orin NX and AGX Orin have a hardware encoder. A product that has to record or restream compressed video all day wants one of those, not this module. Decoding a camera into a detector is the job the Nano is built for.
+
+# Software
+
+The current release is [JetPack 7.2.1](https://developer.nvidia.com/embedded/jetpack/downloads): Jetson Linux 39.2.1, Ubuntu 24.04, kernel 6.8, CUDA 13.2.2 and TensorRT 10.16.2. JetPack 7.2, the release before it, is when Orin joined the JetPack 7 line. NVIDIA's download page lists Isaac ROS as still coming soon, so a robotics project that needs Isaac may be better off staying on JetPack 6, which remains the sustaining release for Orin. Canonical's Ubuntu 24.04 for Jetson is listed alongside Jetson Linux.
+
+A Pi boots Raspberry Pi OS, Ubuntu or Home Assistant OS from an ordinary image. A Jetson boots the image NVIDIA built for that JetPack.
+
+NVIDIA's FAQ says a developer kit is a non-production module on a reference carrier, used to develop and test, and that a production module ships with no software on it. You flash it with the image you have already proved out. The Orin family stays in production through 2032, which is the commitment NVIDIA made in the Super announcement.
+
+# Heat and power
+
+The labelled modes are 7W, 15W and 25W. MAXN sits above the 25W cap. Those numbers are module budgets, not watts at the wall.
+
+PicoCluster's 2 April 2026 run measured module input (VDD_IN) on a headless Super 8GB, with no USB devices, no monitor and no cameras. Idle was 5.2W in the 15W mode, 5.5W in the 25W mode, and 9.1W in MAXN. Llama 3.2 3B generation averaged 11.2W, 13.4W and 15.0W in those three modes. A five-minute soak with the CPU, GPU, NVMe and network all busy peaked at 71°C at the junction and settled at 67 to 68°C. The GPU clock stayed near 1,013MHz, and they recorded no throttling.
+
+A board with a monitor and a camera will draw more, and a meter at the wall will read higher again because of the 19V adapter. Held at the 5.5W module figure, a year of idling is about 50 units of electricity, near ₹400 at ₹8 a unit, before the adapter. A Pi 5 idles around 2.8W at the wall in Jeff Geerling's test, linked from our Pi 5 review. We have no figure for a 35°C room, or for the board shut inside a case. The heatsink and fan are part of the kit.
+
+# Prices in India
+
+<Table data={{
+    headers: ["Product", "US list", "What you get", "India, 11 Nov 2026"],
+    rows: [
+        ["Orin Nano Super developer kit", "$399 (was $249, $499 at launch)", "Board, 19V supply, cooler, wireless module", "₹34,679 at Robu and AI Roboo"],
+        ["Orin Nano 8GB module", "$399 at 1,000 units", "Module only", "₹33,599 at Robu"],
+        ["Orin Nano 4GB module", "$349 at 1,000 units", "512 CUDA cores, 4GB", "₹27,093 at Robu"],
+    ]
+}} />
+
+The US module prices are NVIDIA's price at a thousand units, from the same FAQ that lists the kit at $399. The Indian prices are single-unit listings, from [Robu's NVIDIA category](https://oldwp.robu.in/product-category/microcontroller-development-board/single-board-computer/nvidia-boards/) and AI Roboo's product page. AI Roboo showed ₹34,679 against a crossed-out ₹39,900.
+
+A module still needs a carrier, a supply and cooling. Robu lists a Waveshare carrier, the HDMI version for Orin Nano and Orin NX, at ₹8,289. An 8GB module plus that carrier is ₹41,888 before power, which is more than the listed developer kit. A 4GB module plus the same carrier is ₹35,382. The [current module sheet](https://static.generation-robots.com/media/jetson-orin-datasheet-nano-modules.pdf) rates that 4GB part at 34 sparse INT8 TOPS, 512 CUDA cores, 16 tensor cores and 51GB/s of memory bandwidth. Same money as the 8GB kit, for half the GPU and half the memory.
+
+A marketplace listing far under ₹34,679 is the one to query, because the US price has been $399 since July. On 11 November, NowInStock still had the kit in stock at Amazon in the US for $399.
+
+# Which one to buy
+
+**Developer kit, listed at ₹34,679.** The board to buy when the software you are writing needs CUDA or a hardware decoder, and when a shop will sell it near that price. Add a microSD card or an NVMe drive, and a DisplayPort cable.
+
+**A kit you already own.** Install JetPack 7, or stay on JetPack 6 if the project needs Isaac ROS. Super mode is a power setting.
+
+**8GB module.** For a product, after the software works and someone has designed the carrier, the case and the supply. A poor way to save money on a first board.
+
+**4GB module.** Half the GPU. Once a carrier is in the basket, the total sits next to the 8GB kit.
+
+**Pi 5, with or without an AI HAT.** For GPIO work, Home Assistant, and anything that never calls CUDA. The HAT is the cheaper vision accelerator, and it will not run the TensorRT code a Jetson project is usually written in.
+
+# How we put this review together
+
+Clocks, TOPS and NVIDIA's token rates come from the December 2024 Super post. Ports, the box contents and the camera connector notes come from the current Orin Nano developer kit user guide. Decode stream counts come from module datasheet DS-11105-001. The llama.cpp speeds, module power and temperatures come from PicoCluster's 2 April 2026 log for a board identified as an Orin Nano Super 8GB. US prices come from NVIDIA's developer FAQ and from CNX Software's 22 July 2026 report. Indian prices were checked at Robu and AI Roboo on 11 November 2026. We have not run this board ourselves.

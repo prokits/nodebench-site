@@ -4,6 +4,7 @@ import Image from "next/image";
 type AtAGlanceData = {
     launchDate: string;
     launchPrice: string;
+    priceInIndia?: string;
     processor?: string;
     gpu?: string;
     ram?: string;
@@ -38,6 +39,8 @@ function getTileHeading(key: string) {
             return "Launch Date";
         case "launchPrice":
             return "Launch Price";
+        case "priceInIndia":
+            return "Price in India";
         case "processor":
             return "Processor";
         case "gpu":
@@ -65,7 +68,7 @@ export default function Glance({
     const tiles = entries.length % 2 ? [...entries, null] : entries;
 
     return (
-        <div className="grid md:grid-cols-2 gap-4 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-4 max-w-6xl mx-auto mb-8">
             <div className="relative aspect-video w-full">
                 <Image
                     src={images[0].src}
