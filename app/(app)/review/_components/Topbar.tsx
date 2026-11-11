@@ -14,7 +14,7 @@ export default function Topbar({
     date: string
 }) {
     return (
-        <div className="mb-4">
+        <div className="mb-4 pt-8">
             <div className="flex items-center gap-2 py-2">
                 {brandLogo && <Image 
                 src={brandLogo} 
