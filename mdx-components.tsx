@@ -29,13 +29,13 @@ const components = {
         }} {...props}/>
     ),
     ol: (props: ListProps) => (
-        <ol className="list-decimal pl-8 mb-4 space-y-2" {...props} />
+        <ol className="list-decimal pl-6 mb-4 space-y-2 max-w-[720px]" {...props} />
     ),
     ul: (props: ListProps) => (
-        <ul className="list-disc pl-8 mb-4 space-y-2" {...props} />
+        <ul className="list-disc pl-6 mb-4 space-y-2 max-w-[720px] marker:text-brand_orange" {...props} />
     ),
     li: (props: ListItemProps) => (
-        <li className="text-gray-700 dark:text-foreground/85" {...props} />
+        <li className="pl-1 leading-relaxed text-gray-700 dark:text-foreground/85" {...props} />
     ),
     em: (props: ComponentPropsWithoutRef<'em'>) => (
         <em className="italic" {...props} />
@@ -82,24 +82,26 @@ const components = {
         );
     },
     Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-        <table className="w-full border-collapse mb-4">
-            <thead>
-                <tr className="bg-surface-subtle">
-                    {data.headers.map((header, index) => (
-                        <th key={index} className="border p-2 text-left">{header}</th>
-                    ))}
-                </tr>
-            </thead>
-            <tbody>
-                {data.rows.map((row, index) => (
-                    <tr key={index} className="border-b">
-                        {row.map((cell, cellIndex) => (
-                            <td key={cellIndex} className="border p-2">{cell}</td>
+        <div className="my-8 max-w-[720px] overflow-x-auto">
+            <table className="w-full border-collapse text-sm tabular-nums">
+                <thead>
+                    <tr className="border-b-2 border-brand_orange">
+                        {data.headers.map((header, index) => (
+                            <th key={index} scope="col" className="px-3 pb-2 first:pl-0 last:pr-0 text-left align-bottom font-bold">{header}</th>
                         ))}
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody className="text-gray-700 dark:text-foreground/85">
+                    {data.rows.map((row, index) => (
+                        <tr key={index} className="border-b">
+                            {row.map((cell, cellIndex) => (
+                                <td key={cellIndex} className="px-3 py-2.5 first:pl-0 last:pr-0 align-top leading-snug first:text-foreground">{cell}</td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     ),
     blockquote: (props: BlockquoteProps) => (
         <blockquote

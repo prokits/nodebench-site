@@ -1,14 +1,17 @@
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
 export default function Topbar({
     brandName,
     brandLogo,
+    invertLogoInDark = false,
     title,
     author,
     date
 }: {
     brandName: string,
     brandLogo: string,
+    invertLogoInDark?: boolean,
     title: string,
     author: string,
     date: string
@@ -21,14 +24,10 @@ export default function Topbar({
                 alt={brandName} 
                 width="100" 
                 height="10"
-                className="
-                object-contain
-                object-left
-                max-h-6
-                w-min
-                dark:brightness-0
-                dark:invert
-                "
+                className={cn(
+                    "object-contain object-left max-h-6 w-min",
+                    invertLogoInDark && "dark:brightness-0 dark:invert"
+                )}
                  />}
                 {!brandLogo && brandName && <span>{brandName}</span>}
                 <hr className=" w-full bg-brand_orange-light/20 h-2" />
