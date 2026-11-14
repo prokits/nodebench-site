@@ -51,6 +51,7 @@ function getArticlesMetadata() {
 
 const articles = getArticlesMetadata();
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ArticleCard({
   title,
   image,
