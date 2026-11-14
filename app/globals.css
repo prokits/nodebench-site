@@ -103,6 +103,15 @@ body {
     @apply border-border;
   }
 
+  ::selection {
+    background-color: hsl(var(--brand-orange) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  .dark ::selection {
+    background-color: hsl(var(--brand-orange) / 0.4);
+  }
+
   body {
     @apply bg-background text-foreground;
   }
